@@ -3,7 +3,7 @@ class Admin::TravelresortsController < ApplicationController
   before_action :set_travelresort ,only: [:show,:edit,:update,:destroy]
 
   def index
-    @travelresorts = Travelresort.all
+    @travelresorts = Travelresort.page(params[:page]).per(9)
   end
 
   def new
