@@ -20,6 +20,10 @@ class Admin::TravelresortsController < ApplicationController
     end
   end
 
+  def show
+    @travelresort = Travelresort.find(params[:id])
+  end
+
 
 
 
