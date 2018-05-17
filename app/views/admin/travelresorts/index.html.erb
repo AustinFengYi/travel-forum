@@ -2,10 +2,12 @@
 
 <ul>
 <% @travelresorts.each do |travelresort| %>
- <li><%= travelresort.name %></li>
- <li><%= link_to "show",admin_travelresort_path(travelresort) %></li>
- <li><%= link_to "Edit",edit_admin_travelresort_path(travelresort)%></li>
- <li><%= link_to "Delete",admin_travelresort_path(travelresort),method: :delete,data:{conform:"Are You Sure ?"} %></li>
+  <li>
+    <%= travelresort.name %>
+    <%= link_to "show",admin_travelresort_path(travelresort) %> 
+    <%= link_to "Edit",edit_admin_travelresort_path(travelresort)%> 
+    <%= link_to "Delete",admin_travelresort_path(travelresort),method: :delete,data:{conform:"Are You Sure ?"} %>
+  </li>
 <% end %>
 </ul>
 
