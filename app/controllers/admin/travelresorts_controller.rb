@@ -56,7 +56,7 @@ class Admin::TravelresortsController < ApplicationController
   end
 
   def travelresort_params
-    params.require(:travelresort).permit(:name,:tel,:address,:opening_hours,:description)
+    params.require(:travelresort).permit(:name,:tel,:address,:opening_hours,:description,:image)
   end
 
   def authenticate_admin

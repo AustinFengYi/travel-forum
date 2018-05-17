@@ -20,6 +20,10 @@
   <%= f.label :description ,"Description" %>
   <%= f.text_area :description %>
 
+  <%= f.label :image,"Photo" %>
+  <%= image_tag @travelresort.image,width:"100px" if @travelresort.image? %>
+  <%= f.file_field :image %>
+
   <%= f.submit %>
 <% end %>
 
