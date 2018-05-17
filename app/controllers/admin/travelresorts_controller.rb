@@ -2,7 +2,7 @@ class Admin::TravelresortsController < ApplicationController
   before_action :authenticate_admin
 
   def index
-    
+    @travelresorts = Travelresort.all
   end
 
 
