@@ -1,9 +1,104 @@
-<h1><%= @travelresort.name %></h1>
+<style>
+  .show_bg{
+    background: rgba(0,0,0,0.6);
+    margin: 0 auto;
+    width: 80%;
+    padding: 10px;
+  }
 
-<%= image_tag @travelresort.image,width:"350px" %><br>
-<%= @travelresort.tel %><br>
-<%= @travelresort.address %><br>
-<%= @travelresort.opening_hours %><br>
-<%= @travelresort.description %><br>
+  .show-item{
+    text-align: center;
+    color: #fff;
+  }
 
-<%= link_to "Back to Index",admin_root_path %>
+  .item-image{
+    
+    width: 350px;
+    margin:0 auto;
+    overflow: hidden;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .image{
+    width: 350px;
+    
+    transition: all .5s linear;
+  }
+
+  .item-image:hover .image{
+    transform: scale(1.4);
+    filter: brightness(0.4);
+  }
+
+  .item-image .item-hint{
+    position: absolute;
+    background: rgba(0,0,0,0.4);
+    
+    top: 35%;
+    left: 15%;
+    
+    transform: scaleY(0);
+    transition: all .4s linear;
+  }
+
+  .item-hint p{
+    font-size: 15px;
+  }
+
+  .item-image:hover .item-hint{
+        
+    transform: scaleY(1);
+    transition: all .4s linear;
+  }
+
+  span{
+    display: block;
+    margin-bottom: -15px;
+    margin-top: 5px;
+    font-size: 14px; 
+  }
+
+  p{
+    font-size: 15px;
+  }
+
+  .item-description{
+    width: 70%;
+    margin:0 auto;
+    text-align: justify;
+  }
+
+</style>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="show_bg">
+      <div class="show-item">            
+        <h1><%= @travelresort.name %></h1>
+         
+        <div class="item-image">
+            <%= image_tag @travelresort.image,class:"image" %>
+            <div class="item-hint">
+              <p>Lorem ipsum dolor sit amet, consecte.</p>
+              <p>Lorem ipsum dolor sit amet, ?</p>
+            </div>
+        </div>
+             
+        <span>電話：<%= @travelresort.tel %></span><br>
+        <span>景點地址：<%= @travelresort.address %></span><br>
+        <span>開放時間：<%= @travelresort.opening_hours %></span><br>
+        <div class="item-description">
+          <p>景點介紹：<br><%= @travelresort.description %></p>
+        </div>
+        
+        <br>
+
+        <%= link_to "回到後台總表",admin_root_path,class:"btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
