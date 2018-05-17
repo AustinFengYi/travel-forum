@@ -1,6 +1,6 @@
 class Admin::TravelresortsController < ApplicationController
   before_action :authenticate_admin
-  before_action :set_travelresort ,only: [:show,:edit,:update]
+  before_action :set_travelresort ,only: [:show,:edit,:update,:destroy]
 
   def index
     @travelresorts = Travelresort.all
@@ -38,6 +38,12 @@ class Admin::TravelresortsController < ApplicationController
       flash[:alert]="resort was failed to update"
       render :edit
     end
+  end
+
+  def destroy
+    @travelresort.destroy
+    flash[:alert]="resort was successfully deleted"
+    redirect_to admin_root_path
   end
 
 
